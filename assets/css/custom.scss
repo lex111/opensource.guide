@@ -20,6 +20,11 @@ blockquote {
   }
 }
 
+.lead,
+.alt-lead {
+  word-break: keep-all;
+}
+
 .pquote {
   border: $border;
   padding: $spacer-3;
@@ -62,16 +67,12 @@ blockquote {
   line-height: 0;
 }
 
-.main-links {
-  a {
-    &:hover {
-      background: $bg-gray-light;
-      text-decoration: none;
-      color: $gray-dark;
-    }
+.main-links a {
+  &:hover {
+    background: $bg-gray-light;
+    text-decoration: none;
+    color: $gray-dark;
   }
-  padding-bottom: 5px;
-  padding-top: 5px;
 }
 
 .breadcrumb {
@@ -107,13 +108,13 @@ blockquote {
   h5,
   h6 {
     -webkit-font-smoothing: antialiased;
-    font-family: $font-mktg
+    font-family: $alt-body-font;
   }
 
-  h1 { @include h0-mktg }
+  h1 { @include alt-h1 }
 
   h3 {
-    @include h2-mktg;
+    @include alt-h3;
     margin-top: $spacer-4;
     margin-bottom: $spacer-3;
     @include breakpoint(md) {
@@ -136,7 +137,7 @@ blockquote {
   }
 
   h2 {
-    @include h1-mktg;
+    @include alt-h2;
     text-align: center;
     margin-bottom: $spacer-3;
     line-height: 1.25;
@@ -176,6 +177,7 @@ blockquote {
     font-size: 21px;
     font-weight: $font-weight-light;
     color: $gray;
+    word-break: keep-all;
     @include breakpoint(md) { font-size: 24px; }
     @include breakpoint(lg) { font-size: 26px; }
 
@@ -237,16 +239,4 @@ blockquote {
 
 .little-illo {
   max-height: 50px;
-}
-
-*:lang(ko) {
-  .lead,
-  .lead-mktg ,
-  h2 + p {
-    word-break: keep-all;
-  }
-}
-
-.form-select {
-  -webkit-appearance: none;
 }
